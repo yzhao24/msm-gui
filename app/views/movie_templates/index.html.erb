@@ -2,48 +2,45 @@
   List of all movies
 </h1>
 
+<hr>
 
 <form action="/insert_movie_record" method="post">
-  <div>
-    <label for="title_field">Title</label>
-    <input id="title_field" type="text" name="the_title"> 
-  </div> 
 
   <div>
-    <label for="year_field">Year</label>
-    <input id="year_field" type="text" name="the_year">
+  <label for="title_field">Title</label>
+  <input id="title_field" type="text" name="the_title">
   </div>
 
   <div>
-    <label for="duration_field">Duration</label>
-    <input id="duration_field" type="text"  name="the_duration">
+  <label for="year_field">Year</label>
+  <input id="year_field" type="text" name="the_year">
   </div>
 
   <div>
-    <label for="description_field">Description</label>
-    <input id="description_field" type="text"  name="the_description">
+  <label for="duration_field">Duration</label>
+  <input id="duration_field" type="text" name="the_duration">
   </div>
 
   <div>
-    <label for="image_field">Image</label>
-    <input id="image_field" type="text" name="the_image">
+  <label for="description_field">Description</label>
+  <input id="description_field" type="text" name="the_description">
   </div>
 
   <div>
-    <label for="director_id_field">Director</label>
-    <input id="director_id_field" type="text" name="the_director_id">
-  </div>  
+  <label for="image_field">Image</label>
+  <input id="image_field" type="text" name="the_image">
+  </div>
 
-  <button>
-    Create movie
-  </button>
+  <div>
+  <label for="director_field">Director ID</label>
+  <input id="director_field" type="text" name="the_director">
+  </div>
 
+  <div>
+  <button>Create movie</button>
+  </div>
 </form>
 
-
-
-
-<hr>
 
 <table border="1">
   <tr>
@@ -94,15 +91,10 @@
       
       <% the_director = matching_directors.at(0) %>
 
-
-    <% if the_director == nil %>
-      Uh oh! We weren't able to find the director for this movie.
-
-    <% else %>
-      <% the_director.name %>
-
-    <% end %>
-    
+      <% if the_director == nil %>
+      <% else %>
+        <%= the_director.name %>
+      <% end %>  
     </td>
 
     <td>
